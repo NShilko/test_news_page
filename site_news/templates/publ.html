@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filter %}
+
+{% block title %}
+Новость
+{% endblock title %}
+
+{% block content %}
+<br />
+<h4>{{ publ.title|censor }}</h4>
+<i>{{ publ.date|date_converter}}</i>
+<p>Рейтинг статьи: {{ publ.rate }}</p>
+<br />
+<p>{{ publ.main_text|censor}}</p>
+{% endblock content %}
